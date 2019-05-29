@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="buttonbackcolor">#108274</color>
+    <color name="buttonpressedcolor">#101082</color>
+    <color name="errorColor">#be0808</color>
+    <color name="monthColor">#5C0626</color>
+</resources>

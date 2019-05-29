@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_sync"
+        android:icon="@drawable/sync"
+        android:title="Sync tables" />
+
+    <item android:id="@+id/nav_manageuser"
+        android:title="Manage User"
+        android:icon="@drawable/manageuser"
+        />
+
+    <item
+        android:id="@+id/nav_share"
+        android:icon="@drawable/ic_menu_share"
+        android:title="share" />
+    <item
+        android:id="@+id/nav_manage"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Settings" />
+
+</menu>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:weightSum="4"
+    tools:context=".RegistrationActivity"
+
+    >
+
+    <ProgressBar
+        android:id="@+id/pbRegistration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        />
+
+    <LinearLayout
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:layout_marginBottom="28dp"
+        android:paddingBottom="@dimen/margin_bottom"
+
+        >
+        <ImageView
+            android:id="@+id/ivRegIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/registrationthumb"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="USER REGISTRATION"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:layout_below="@+id/ivRegIcon"
+
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:padding="16dp"
+
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etEmpNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Employee Number"
+            android:inputType="number"
+            android:maxLength="5"
+            android:background="@drawable/etbackground"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"/>
+
+        <EditText
+            android:id="@+id/etMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mobile Number"
+            android:inputType="number"
+            android:maxLength="10"
+            android:background="@drawable/etbackground"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"/>
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Employee Name"
+            android:inputType="text"
+            android:background="@drawable/etbackground"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"/>
+        <Spinner
+            android:id="@+id/spRegCircle"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinnerborder"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            >
+
+        </Spinner>
+
+        <CheckBox
+            android:id="@+id/cbAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin User"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="bottom">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:background="@drawable/buttonback"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:onClick="registerUser"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

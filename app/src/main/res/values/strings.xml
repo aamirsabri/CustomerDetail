@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">PGVCL CMS</string>
+    <string name="title_activity_home">PGVCL CMS</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">PGVCL CMS</string>
+    <string name="nav_header_subtitle">Paschim Gujarat Vij Company Ltd</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="circle_list">
+        <item>Select Circle</item>
+        <item>Rajkot City Circle</item>
+        <item>Rajkot Rural Circle</item>
+        <item>Junagadh Circle</item>
+        <item>Amreli Circle</item>
+        <item>Porbandar Circle</item>
+    </string-array>
+
+    <string-array name="division_list">
+        <item>Select Division</item>
+        <item>Junagadh City Division</item>
+        <item>Junagadh Rural-1 Division</item>
+        <item>Junagadh Rural-2 Division</item>
+        <item>Veraval Divisoin</item>
+
+    </string-array>
+
+    <string-array name="sdn_list">
+        <item>Select Sub-Division</item>
+        <item>Central Sdn</item>
+        <item>Satellite Sdn</item>
+        <item>Gandhigram Sdn</item>
+        <item>Junagadh GIDC Sdn</item>
+
+    </string-array>
+    <string name="title_activity_consumer_detail">Consumer Detail</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

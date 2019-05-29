@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".HomeActivity"
+    tools:showIn="@layout/app_bar_home">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="horizontal|vertical"
+    android:scrollbarStyle="outsideInset"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvCircle"
+            style="@style/textViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Circle *"
+            />
+
+        <Spinner
+            android:id="@+id/spCircle"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinnerborder"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            >
+
+        </Spinner>
+
+        <TextView
+            android:id="@+id/tvDivision"
+            style="@style/textViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Division *"
+
+            />
+
+        <Spinner
+            android:id="@+id/spDivision"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinnerborder"
+            android:layout_marginBottom="@dimen/margin_bottom">
+
+        </Spinner>
+
+        <TextView
+            android:id="@+id/tvSdn"
+            style="@style/textViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Sub Division *" />
+
+        <Spinner
+            android:id="@+id/spSdn"
+            style="@style/spinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinnerborder"
+            android:layout_marginBottom="@dimen/margin_bottom">
+
+        </Spinner>
+
+        <RadioGroup
+            android:id="@+id/rgSearchId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_bottom"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            >
+
+            <TextView
+                android:id="@+id/tvSearchType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textViewStyle"
+                android:text="Search Type *" />
+
+            <RadioButton
+                android:id="@+id/rbConsumerNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consumer No"
+               />
+
+            <RadioButton
+                android:id="@+id/rbMeterNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Meter No" />
+
+            <RadioButton
+                android:id="@+id/rbConsumerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consumer Name" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type your search"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:padding="16dp"
+
+                android:text="Search"
+                android:background="@drawable/buttonback"
+                android:textColor="#ffffff"
+                android:onClick="searchConsumer"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+</android.support.constraint.ConstraintLayout>
