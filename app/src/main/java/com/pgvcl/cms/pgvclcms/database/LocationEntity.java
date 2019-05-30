@@ -1,7 +1,7 @@
 package com.pgvcl.cms.pgvclcms.database;
 
 public class LocationEntity {
-    public static final String COL_CIRCODE = "CIRCODE",COL_CIR_LOCCODE = "CIRELOCCD",COL_CIR_NAME = "CIRNAME",COL_DVNCODE = "DVNCODE",COL_DVNLOCCODE = "DVNELOCCD",COL_DVNAME = "DVNNAME", COL_SDNCODE = "SDNCODE",COL_SDNLOC ="LOC",COL_SDNLOCCODE ="ELOCCD",COL_SDNNAME = "NAME";
+    public static final String COL_CIRCODE = "CIRCODE",COL_CIR_LOCCODE = "CIRELOCCD",COL_CIR_NAME = "cirname",COL_DVNCODE = "DVNCODE",COL_DVNLOCCODE = "DVNELOCCD",COL_DVNAME = "DVNNAME", COL_SDNCODE = "SDNCODE",COL_SDNLOC ="LOC",COL_SDNLOCCODE ="ELOCCD",COL_SDNNAME = "NAME";
     String cirCode,cirLocCode,cirName,dvnCode,dvnLocCode,dvnName,sdnCode,sdnLoc,sdnLocCode,sdnName;
 
     public LocationEntity(){}

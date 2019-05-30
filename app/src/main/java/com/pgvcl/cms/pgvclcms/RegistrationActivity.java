@@ -10,6 +10,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,20 +21,23 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.pgvcl.cms.pgvclcms.database.MyDBController;
+
 public class RegistrationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 EditText etEmpNo,etEmpName,etEmpMobile;
 CheckBox cbAdmin;
-String[] circleList;
-
+String TAG="APPPGVCLCMS";
 ProgressBar pbRegistration;
 String empNo,empName,empMobile;
 boolean isAdmin = false;
 String imei;
 TelephonyManager mTelephonyManager;
 int ALREADY_REGISTERED=101,REGISTRATION_SUCCESSFULL=100,USER_ADMIN=201,USER_NORMAL=200;
-    String RESPONSE_REGISTRATION_STATUS = "REGISTRATION_STATUS",RESPONSE_USERTYPE = "USER_TYPE";
+    String RESPONSE_REGISTRATION_STATUS = "REGISTRATION_STATUS",RESPONSE_USERTYPE = "USER_TYPE",selectedCircle;
     int registrationStatus = 0,userType = USER_NORMAL;
     Spinner spRegCircle;
+    String[] circles = new String[]{"SELECT CIRCLE"},divisions = new String[] {"SELECT DIVISION"},sdns= new String[] {"SELECT SUB DIVISION"};
+    MyDBController myDBController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,23 +48,37 @@ int ALREADY_REGISTERED=101,REGISTRATION_SUCCESSFULL=100,USER_ADMIN=201,USER_NORM
             intent.putExtra("isAdmin",isAdmin);
             startActivity(intent);
         }
-
+        myDBController = new MyDBController(this);
+        //myDBController.deleteDatabase();
+        myDBController.createDatabase();
         etEmpNo = (EditText) findViewById(R.id.etEmpNo);
         etEmpName = (EditText) findViewById(R.id.etName);
         etEmpMobile = (EditText) findViewById(R.id.etMobile);
         cbAdmin = (CheckBox) findViewById(R.id.cbAdmin);
         spRegCircle = (Spinner) findViewById(R.id.spRegCircle);
-        circleList = getResources().getStringArray(R.array.circle_list);
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,circleList);
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,circles);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spRegCircle.setAdapter(arrayAdapter);
         spRegCircle.setOnItemSelectedListener(this);
 
         pbRegistration = (ProgressBar) findViewById(R.id.pbRegistration);
+
+        //showProgressBar();
+        fetchCircleList();
+        arrayAdapter  = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,circles);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spRegCircle.setAdapter(arrayAdapter);
+
+        Log.d(TAG,"Size of circles fetched " + circles.length);
+
     }
 
-
+    public void fetchCircleList(){
+        circles = myDBController.getAllCircles();
+        Toast.makeText(this,"Could not fetch Cirlce list",Toast.LENGTH_LONG).show();
+    }
 
     public boolean isActiveUser(){
         return false;
@@ -174,11 +192,16 @@ int ALREADY_REGISTERED=101,REGISTRATION_SUCCESSFULL=100,USER_ADMIN=201,USER_NORM
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+        if(position == 0){
+            Toast.makeText(this,"Please select any circle",Toast.LENGTH_LONG).show();
+            return;
+        }
+        selectedCircle = new String(circles[position]);
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+
 
     }
 }
