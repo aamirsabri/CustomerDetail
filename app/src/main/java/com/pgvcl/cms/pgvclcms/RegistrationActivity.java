@@ -77,7 +77,7 @@ int ALREADY_REGISTERED=101,REGISTRATION_SUCCESSFULL=100,USER_ADMIN=201,USER_NORM
 
     public void fetchCircleList(){
         circles = myDBController.getAllCircles();
-        Toast.makeText(this,"Could not fetch Cirlce list",Toast.LENGTH_LONG).show();
+
     }
 
     public boolean isActiveUser(){
